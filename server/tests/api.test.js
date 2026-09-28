@@ -1,3 +1,5 @@
+process.env.NODE_ENV = 'test';
+
 const { test, describe, before, after } = require('node:test');
 const assert = require('node:assert/strict');
 const http = require('node:http');
@@ -79,7 +81,7 @@ describe('AGRISHOP Complete API Test Suite', () => {
     const res = await request('GET', '/api/health');
     assert.equal(res.status, 200);
     assert.equal(res.body.status, 'OK');
-    assert.equal(res.body.institution, 'IAI Cameroon');
+    assert.equal(res.body.institution, 'AGRISHOP');
   });
 
   // 2. AUTHENTICATION & REGISTRATION

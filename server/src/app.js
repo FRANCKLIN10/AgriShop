@@ -36,7 +36,7 @@ app.get('/api/health', (req, res) => {
   res.json({
     status: 'OK',
     platform: 'AGRISHOP Agricultural Product Marketing Platform',
-    institution: 'IAI Cameroon',
+    institution: 'AGRISHOP',
     timestamp: new Date().toISOString()
   });
 });

@@ -337,7 +337,7 @@ export default function ProductDetails() {
           </form>
         ) : (
           <div className="bg-slate-50 p-4 rounded-xl text-xs text-slate-600 flex items-center justify-between">
-            <span>Please sign in with your buyer account to share a product review.</span>
+            <span>Please sign in with your customer account to share a product review.</span>
             <Link to="/login" className="font-bold text-emerald-700 hover:underline">
               Sign In →
             </Link>

@@ -92,7 +92,7 @@ export default function Register() {
             }`}
           >
             <ShoppingBag className="w-4 h-4" />
-            <span>Buyer</span>
+            <span>Customer</span>
           </button>
           <button
             type="button"

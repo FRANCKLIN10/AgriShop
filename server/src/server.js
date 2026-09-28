@@ -9,7 +9,7 @@ const server = app.listen(env.PORT, () => {
   console.log(`=======================================================`);
   console.log(`🌿 AGRISHOP Backend API Server running on port ${env.PORT}`);
   console.log(`🌍 Health Check: http://localhost:${env.PORT}/api/health`);
-  console.log(`🌾 Platform: IAI Cameroon Level 2 Software Engineering`);
+  console.log(`🌾 Platform: AGRISHOP Marketplace`);
   console.log(`=======================================================`);
 });
 

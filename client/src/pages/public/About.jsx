@@ -8,25 +8,25 @@ export default function About() {
       <div className="text-center space-y-4">
         <div className="inline-flex items-center space-x-2 bg-emerald-50 border border-emerald-200 px-4 py-1.5 rounded-full text-xs font-bold text-emerald-800">
           <Award className="w-4 h-4" />
-          <span>Final Year Project — IAI Cameroon Software Engineering Level 2</span>
+          <span>Marketplace overview</span>
         </div>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900">
-          Project Documentation & Architecture
+          AGRISHOP platform overview
         </h1>
         <p className="text-sm text-slate-500 max-w-2xl mx-auto">
-          Design and Implementation of an Agricultural Product Marketing Platform — A complete, production-grade web application built according to formal UML specification.
+          A complete agricultural marketplace for sourcing fresh produce, managing orders, and coordinating deliveries efficiently.
         </p>
       </div>
 
       {/* Project Overview */}
       <div className="bg-white rounded-3xl border border-slate-100 shadow-sm p-8 space-y-6">
-        <h2 className="text-xl font-bold text-slate-900 border-b border-slate-100 pb-4">Project Overview</h2>
+        <h2 className="text-xl font-bold text-slate-900 border-b border-slate-100 pb-4">Marketplace Overview</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-slate-600 leading-relaxed">
           <div>
-            <p><span className="font-bold text-slate-800">Title:</span> Design and Implementation of an Agricultural Product Marketing Platform</p>
-            <p className="mt-2"><span className="font-bold text-slate-800">Institution:</span> IAI Cameroon (Institut Africain d'Informatique)</p>
-            <p className="mt-2"><span className="font-bold text-slate-800">Level:</span> Software Engineering — Level 2 Final Year Project</p>
-            <p className="mt-2"><span className="font-bold text-slate-800">Year:</span> Academic Year 2025–2026</p>
+            <p><span className="font-bold text-slate-800">Platform:</span> AGRISHOP agricultural marketplace</p>
+            <p className="mt-2"><span className="font-bold text-slate-800">Focus:</span> Fresh produce sourcing and order coordination</p>
+            <p className="mt-2"><span className="font-bold text-slate-800">Operations:</span> Marketplace, inventory, payments, and delivery</p>
+            <p className="mt-2"><span className="font-bold text-slate-800">Coverage:</span> Cameroon and regional supply chains</p>
           </div>
           <div>
             <p><span className="font-bold text-slate-800">Architecture:</span> Full-Stack REST API + React SPA</p>
@@ -39,17 +39,17 @@ export default function About() {
 
       {/* 5 Actors */}
       <div className="bg-white rounded-3xl border border-slate-100 shadow-sm p-8 space-y-6">
-        <h2 className="text-xl font-bold text-slate-900 border-b border-slate-100 pb-4">System Actors (UML)</h2>
+        <h2 className="text-xl font-bold text-slate-900 border-b border-slate-100 pb-4">Core Marketplace Actors</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {[
-            { icon: Users, color: 'blue', title: 'USER', desc: 'Authenticated base actor. Manages profile, views notifications, and accesses public catalogue.' },
-            { icon: ShoppingBag, color: 'emerald', title: 'SELLER / BUYER', desc: 'Places orders, selects payment methods (MTN MoMo, Orange Money, Card), tracks purchases and reviews order history.' },
-            { icon: Wheat, color: 'amber', title: 'FARMER', desc: 'After admin validation, publishes products, manages inventory, receives and processes incoming orders.' },
-            { icon: Truck, color: 'indigo', title: 'DELIVERY SERVICE', desc: 'Views delivery requests, accepts pickups, advances delivery status, logs completion history.' },
-            { icon: ShieldCheck, color: 'purple', title: 'ADMINISTRATOR', desc: 'Validates farmers, manages all users/products/categories, monitors transactions, views dashboard analytics.' },
-          ].map(({ icon: Icon, color, title, desc }) => (
-            <div key={title} className={`p-5 rounded-2xl border bg-${color}-50/40 border-${color}-100 space-y-3`}>
-              <div className={`w-10 h-10 rounded-xl bg-${color}-100 text-${color}-700 flex items-center justify-center`}>
+            { icon: Users, cardClass: 'bg-blue-50/40 border-blue-100', iconClass: 'bg-blue-100 text-blue-700', title: 'USER', desc: 'Authenticated base actor. Manages profile, views notifications, and accesses public catalogue.' },
+            { icon: ShoppingBag, cardClass: 'bg-emerald-50/40 border-emerald-100', iconClass: 'bg-emerald-100 text-emerald-700', title: 'CUSTOMERS', desc: 'Places orders, selects payment methods (MTN MoMo, Orange Money, Card), tracks purchases and reviews order history.' },
+            { icon: Wheat, cardClass: 'bg-amber-50/40 border-amber-100', iconClass: 'bg-amber-100 text-amber-700', title: 'FARMER', desc: 'After admin validation, publishes products, manages inventory, receives and processes incoming orders.' },
+            { icon: Truck, cardClass: 'bg-indigo-50/40 border-indigo-100', iconClass: 'bg-indigo-100 text-indigo-700', title: 'DELIVERY SERVICE', desc: 'Views delivery requests, accepts pickups, advances delivery status, logs completion history.' },
+            { icon: ShieldCheck, cardClass: 'bg-purple-50/40 border-purple-100', iconClass: 'bg-purple-100 text-purple-700', title: 'ADMINISTRATOR', desc: 'Validates farmers, manages all users/products/categories, monitors transactions, views dashboard analytics.' },
+          ].map(({ icon: Icon, cardClass, iconClass, title, desc }) => (
+            <div key={title} className={`p-5 rounded-2xl border ${cardClass} space-y-3`}>
+              <div className={`w-10 h-10 rounded-xl ${iconClass} flex items-center justify-center`}>
                 <Icon className="w-5 h-5" />
               </div>
               <h3 className="font-bold text-slate-900">{title}</h3>
@@ -61,7 +61,7 @@ export default function About() {
 
       {/* 15 Use Cases */}
       <div className="bg-white rounded-3xl border border-slate-100 shadow-sm p-8 space-y-6">
-        <h2 className="text-xl font-bold text-slate-900 border-b border-slate-100 pb-4">15 Core Use Cases Implemented</h2>
+        <h2 className="text-xl font-bold text-slate-900 border-b border-slate-100 pb-4">Core Marketplace Operations</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {[
             { num: '01', name: 'Authenticate', desc: 'JWT-based login, registration, session validation for all 5 roles.' },
@@ -142,13 +142,13 @@ export default function About() {
 
       {/* Test Credentials */}
       <div className="bg-emerald-900 text-white rounded-3xl p-8 space-y-6">
-        <h2 className="text-xl font-bold border-b border-emerald-800 pb-4">Academic Defence Test Credentials</h2>
+        <h2 className="text-xl font-bold border-b border-emerald-800 pb-4">Platform Access Credentials</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {[
             { role: 'ADMINISTRATOR', email: 'admin@agrishop.cm', pass: 'Admin@12345', color: 'purple' },
             { role: 'FARMER (Approved)', email: 'farmer.buea@agrishop.cm', pass: 'Farmer@12345', color: 'emerald' },
             { role: 'FARMER (Pending)', email: 'farmer.new@agrishop.cm', pass: 'Farmer@12345', color: 'amber' },
-            { role: 'BUYER', email: 'buyer.douala@agrishop.cm', pass: 'Buyer@12345', color: 'blue' },
+            { role: 'CUSTOMER', email: 'buyer.douala@agrishop.cm', pass: 'Buyer@12345', color: 'blue' },
             { role: 'DELIVERY SERVICE', email: 'delivery.express@agrishop.cm', pass: 'Delivery@12345', color: 'indigo' },
           ].map(({ role, email, pass }) => (
             <div key={role} className="bg-emerald-800/60 border border-emerald-700/40 rounded-2xl p-4 space-y-1">

@@ -39,7 +39,7 @@ function seedDatabase() {
     adminHash,
     'ADMINISTRATOR',
     '+237 670 000 001',
-    'IAI Cameroon Campus, Boulevard du 20 Mai',
+    'Head Office, Yaounde',
     'Yaounde',
     'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80'
   ).lastInsertRowid);
@@ -81,7 +81,7 @@ function seedDatabase() {
     'Dr. Kevin Fongang',
     'buyer.douala@agrishop.cm',
     buyerHash,
-    'SELLER_BUYER',
+    'CUSTOMER',
     '+237 671 234 567',
     'Rue des Palmiers, Akwa',
     'Douala',
@@ -99,6 +99,72 @@ function seedDatabase() {
     'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80'
   ).lastInsertRowid);
 
+  const farmer3Id = Number(insertUser.run(
+    'Mariam Sani (Kano Fresh Holdings)',
+    'farmer.kano@agrishop.cm',
+    farmerHash,
+    'FARMER',
+    '+234 803 010 2030',
+    'Kura Road, Kano State',
+    'Kano',
+    'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80'
+  ).lastInsertRowid);
+
+  const farmer4Id = Number(insertUser.run(
+    'Awa Diop (Dakar Green Growers)',
+    'farmer.dakar@agrishop.cm',
+    farmerHash,
+    'FARMER',
+    '+221 770 123 456',
+    'Route de Hann, Dakar',
+    'Dakar',
+    'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=300&q=80'
+  ).lastInsertRowid);
+
+  const buyer3Id = Number(insertUser.run(
+    'Kwame Osei',
+    'buyer.accra@agrishop.cm',
+    buyerHash,
+    'CUSTOMER',
+    '+233 201 444 889',
+    'Spintex Road, Accra',
+    'Accra',
+    'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80'
+  ).lastInsertRowid);
+
+  const farmer5Id = Number(insertUser.run(
+    'Nabintu Achieng (Nakuru Orchard Network)',
+    'farmer.nakuru@agrishop.africa',
+    farmerHash,
+    'FARMER',
+    '+254 712 090 779',
+    'Nakuru County, Rift Valley',
+    'Nakuru',
+    'https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=300&q=80'
+  ).lastInsertRowid);
+
+  const farmer6Id = Number(insertUser.run(
+    'Yasmine El Messaoudi (Rabat Organic Delta)',
+    'farmer.rabat@agrishop.africa',
+    farmerHash,
+    'FARMER',
+    '+212 611 330 140',
+    'Sidi Mohamed Ben Abdellah, Rabat',
+    'Rabat',
+    'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=300&q=80'
+  ).lastInsertRowid);
+
+  const buyer4Id = Number(insertUser.run(
+    'Amina Jallow',
+    'buyer.kampala@agrishop.africa',
+    buyerHash,
+    'CUSTOMER',
+    '+256 772 990 221',
+    'Kololo, Kampala',
+    'Kampala',
+    'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=300&q=80'
+  ).lastInsertRowid);
+
   const deliveryId = Number(insertUser.run(
     'Express Agro-Logistics Ltd',
     'delivery.express@agrishop.cm',
@@ -108,6 +174,17 @@ function seedDatabase() {
     'Hub Central Fret, Bonaberi',
     'Douala',
     'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&q=80'
+  ).lastInsertRowid);
+
+  const delivery2Id = Number(insertUser.run(
+    'African Route Logistics',
+    'delivery.nairobi@agrishop.africa',
+    deliveryHash,
+    'DELIVERY_SERVICE',
+    '+254 720 123 555',
+    'Mombasa Road, Nairobi',
+    'Nairobi',
+    'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=300&q=80'
   ).lastInsertRowid);
 
   // 2. SEED FARMER PROFILES
@@ -153,6 +230,58 @@ function seedDatabase() {
     'Pending verification of land registry documentation by administrator.',
     null,
     null
+  );
+
+  insertFarmerProfile.run(
+    farmer3Id,
+    'Kano Northern Grain Co-op',
+    'Kano, North West Nigeria',
+    '30 Hectares',
+    'NG-001-KANO-2025',
+    'Millet, Sorghum, Groundnuts, and Ginger',
+    'Approved',
+    'Approved for regional export trade and cross-border distribution.',
+    adminId,
+    new Date().toISOString()
+  );
+
+  insertFarmerProfile.run(
+    farmer4Id,
+    'Dakar Fresh Produce Collective',
+    'Dakar, Senegal',
+    '18 Hectares',
+    'SN-120-DKR-2025',
+    'Mangoes, Okra, Chili Peppers, and Sweet Corn',
+    'Approved',
+    'Verified supplier for West African fresh produce circulation.',
+    adminId,
+    new Date().toISOString()
+  );
+
+  insertFarmerProfile.run(
+    farmer5Id,
+    'Nakuru Orchard Network',
+    'Nakuru, Rift Valley, Kenya',
+    '22 Hectares',
+    'KE-304-NKR-2025',
+    'Avocado, Passion Fruit, Citrus, and Herbs',
+    'Approved',
+    'Verified East African fresh produce exporter serving regional retail chains.',
+    adminId,
+    new Date().toISOString()
+  );
+
+  insertFarmerProfile.run(
+    farmer6Id,
+    'Rabat Organic Delta',
+    'Rabat, Morocco',
+    '12 Hectares',
+    'MA-118-RBT-2025',
+    'Argan Oil, Citrus, Dates, and Organic Herbs',
+    'Approved',
+    'Certified for premium organic and value-added agriculture products.',
+    adminId,
+    new Date().toISOString()
   );
 
   // 3. SEED CATEGORIES
@@ -318,6 +447,123 @@ function seedDatabase() {
       location: 'Foumban / West',
       stock: 18,
       threshold: 5
+    },
+    {
+      farmerId: farmer3Id,
+      categorySlug: 'grains',
+      name: 'Kano Sorghum Flour (25kg Sack)',
+      slug: 'kano-sorghum-flour-25kg',
+      description: 'Highly nutritious sorghum flour from northern Nigeria, ideal for local porridge and baking.',
+      price: 17000,
+      unit: 'sack (25kg)',
+      imageUrl: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80',
+      location: 'Kano, Nigeria',
+      stock: 40,
+      threshold: 12
+    },
+    {
+      farmerId: farmer4Id,
+      categorySlug: 'vegetables',
+      name: 'Dakar Chili Pepper Mix (Basket 12kg)',
+      slug: 'dakar-chili-pepper-basket',
+      description: 'Hot, aromatic chili peppers harvested in Senegal for sauces, seasoning, and export-ready retail.',
+      price: 9800,
+      unit: 'basket (12kg)',
+      imageUrl: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=600&q=80',
+      location: 'Dakar, Senegal',
+      stock: 58,
+      threshold: 15
+    },
+    {
+      farmerId: farmer4Id,
+      categorySlug: 'fruits',
+      name: 'Sweet Senegal Mangoes (Crate 20kg)',
+      slug: 'senegal-mangoes-crate',
+      description: 'Juicy, golden mangoes from the river valleys of Senegal, rich in flavor and natural sweetness.',
+      price: 13500,
+      unit: 'crate (20kg)',
+      imageUrl: 'https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=600&q=80',
+      location: 'Saint-Louis, Senegal',
+      stock: 32,
+      threshold: 10
+    },
+    {
+      farmerId: farmer3Id,
+      categorySlug: 'processed',
+      name: 'Ginger-Garlic Blend (5kg Tin)',
+      slug: 'nigeria-ginger-garlic-blend',
+      description: 'Strong aromatic cooking blend for soups, stews, and seasoning across West African kitchens.',
+      price: 11000,
+      unit: 'tin (5kg)',
+      imageUrl: 'https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?auto=format&fit=crop&w=600&q=80',
+      location: 'Kano, Nigeria',
+      stock: 24,
+      threshold: 8
+    },
+    {
+      farmerId: farmer5Id,
+      categorySlug: 'fruits',
+      name: 'Nakuru Hass Avocados (Box 12kg)',
+      slug: 'nakuru-hass-avocados-box',
+      description: 'Creamy, nutrient-dense Hass avocados from Kenya, ideal for premium retail and healthy exports.',
+      price: 16500,
+      unit: 'box (12kg)',
+      imageUrl: 'https://images.unsplash.com/photo-1519162808019-7de1683fa2ad?auto=format&fit=crop&w=600&q=80',
+      location: 'Nakuru, Kenya',
+      stock: 36,
+      threshold: 10
+    },
+    {
+      farmerId: farmer6Id,
+      categorySlug: 'processed',
+      name: 'Organic Argan Oil (500ml Bottle)',
+      slug: 'organic-argan-oil-500ml',
+      description: 'Cold-pressed Moroccan argan oil sourced from organic groves and crafted for culinary and cosmetic use.',
+      price: 22000,
+      unit: 'bottle (500ml)',
+      imageUrl: 'https://images.unsplash.com/photo-1625948515291-69613efd103f?auto=format&fit=crop&w=600&q=80',
+      location: 'Rabat, Morocco',
+      stock: 28,
+      threshold: 7
+    },
+    {
+      farmerId: farmer5Id,
+      categorySlug: 'vegetables',
+      name: 'Rift Valley Kale & Spinach Bundle',
+      slug: 'rift-valley-kale-spinach-bundle',
+      description: 'Fresh green leafy vegetables cultivated in Kenya for high-demand urban and hotel kitchens.',
+      price: 6200,
+      unit: 'bundle (8kg)',
+      imageUrl: 'https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=600&q=80',
+      location: 'Nakuru, Kenya',
+      stock: 44,
+      threshold: 12
+    },
+    {
+      farmerId: farmer6Id,
+      categorySlug: 'fruits',
+      name: 'Moroccan Medjool Dates (Carton 10kg)',
+      slug: 'moroccan-medjool-dates-carton',
+      description: 'Plump, naturally sweet Medjool dates harvested under North African sun and packed for premium markets.',
+      price: 14800,
+      unit: 'carton (10kg)',
+      imageUrl: 'https://images.unsplash.com/photo-1601039641847-7857b994d704?auto=format&fit=crop&w=600&q=80',
+      location: 'Rabat & Ouarzazate, Morocco',
+      stock: 26,
+      threshold: 8
+    },
+    {
+      farmerId: farmer5Id,
+      categorySlug: 'grains',
+      name: 'Kenyan Premium Coffee Beans (5kg)',
+      slug: 'kenyan-premium-coffee-beans-5kg',
+      description: 'Single-origin East African coffee with bright acidity, rich body, and clean aromatic finish.',
+      price: 27000,
+      unit: 'bag (5kg)',
+      imageUrl: 'https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=600&q=80',
+      location: 'Kiambu, Kenya',
+      stock: 18,
+      threshold: 6
     }
   ];
 

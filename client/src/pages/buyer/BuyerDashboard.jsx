@@ -40,7 +40,7 @@ export default function BuyerDashboard() {
           <div>
             <p className="text-emerald-200 text-sm">Welcome back,</p>
             <h1 className="text-2xl font-extrabold">{user?.name}</h1>
-            <p className="text-emerald-200 text-xs mt-1">{user?.city} • Buyer Account</p>
+            <p className="text-emerald-200 text-xs mt-1">{user?.city} • Customer account</p>
           </div>
         </div>
       </div>
@@ -67,17 +67,17 @@ export default function BuyerDashboard() {
       {/* Quick Actions */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
         {[
-          { to: '/products', label: 'Browse Marketplace', icon: ShoppingBag, color: 'emerald' },
-          { to: '/buyer/orders', label: 'My Orders', icon: Package, color: 'blue' },
-          { to: '/buyer/history', label: 'Order History', icon: Clock, color: 'purple' },
-          { to: '/profile', label: 'My Profile', icon: CheckCircle, color: 'amber' },
-        ].map(({ to, label, icon: Icon, color }) => (
+          { to: '/products', label: 'Browse Marketplace', icon: ShoppingBag, cardClass: 'bg-emerald-50 text-emerald-600 group-hover:bg-emerald-100', href: '/products' },
+          { to: '/buyer/orders', label: 'My Orders', icon: Package, cardClass: 'bg-blue-50 text-blue-600 group-hover:bg-blue-100', href: '/buyer/orders' },
+          { to: '/buyer/history', label: 'Order History', icon: Clock, cardClass: 'bg-purple-50 text-purple-600 group-hover:bg-purple-100', href: '/buyer/history' },
+          { to: '/profile', label: 'My Profile', icon: CheckCircle, cardClass: 'bg-amber-50 text-amber-600 group-hover:bg-amber-100', href: '/profile' },
+        ].map(({ to, label, icon: Icon, cardClass }) => (
           <Link
             key={to}
             to={to}
-            className={`bg-white p-4 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all flex flex-col items-center space-y-2 text-center group`}
+            className="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all flex flex-col items-center space-y-2 text-center group"
           >
-            <div className={`w-10 h-10 rounded-xl bg-${color}-50 text-${color}-600 flex items-center justify-center group-hover:bg-${color}-100 transition-colors`}>
+            <div className={`w-10 h-10 rounded-xl ${cardClass} flex items-center justify-center transition-colors`}>
               <Icon className="w-5 h-5" />
             </div>
             <span className="text-xs font-bold text-slate-700">{label}</span>

@@ -1,3 +1,27 @@
+# dependencies
 node_modules/
-dist/
+
+# environment files
 .env
+.env.*
+!.env.example
+
+# local database files
+/data/*.db
+/data/*.sqlite
+/data/*.sqlite3
+
+# uploads
+/uploads/*
+!/uploads/.gitkeep
+
+# logs
+*.log
+npm-debug.log*
+
+# test coverage
+coverage/
+
+# editors
+.vscode/
+.DS_Store

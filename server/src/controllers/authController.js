@@ -38,7 +38,7 @@ const authController = {
       }
 
       // Disallow self-registering as ADMINISTRATOR
-      const allowedRoles = ['USER', 'SELLER_BUYER', 'FARMER', 'DELIVERY_SERVICE'];
+      const allowedRoles = ['USER', 'CUSTOMER', 'SELLER_BUYER', 'FARMER', 'DELIVERY_SERVICE'];
       const targetRole = allowedRoles.includes(role) ? role : 'USER';
 
       // Check if email is already taken

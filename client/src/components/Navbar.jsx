@@ -43,12 +43,18 @@ export default function Navbar() {
         return '/farmer/dashboard';
       case 'DELIVERY_SERVICE':
         return '/delivery/dashboard';
-      case 'SELLER_BUYER':
+      case 'CUSTOMER':
       case 'USER':
       default:
         return '/buyer/dashboard';
     }
   };
+
+  const getRoleLabel = () => {
+    if (role === 'CUSTOMER' || role === 'SELLER_BUYER') return 'Customer';
+    return role?.replace('_', ' ') || 'User';
+  };
+
 
   const getRoleIcon = () => {
     switch (role) {
@@ -79,9 +85,6 @@ export default function Navbar() {
                 <span className="text-2xl font-extrabold tracking-tight text-emerald-950">AGRI</span>
                 <span className="text-2xl font-extrabold tracking-tight text-emerald-600">SHOP</span>
               </div>
-              <p className="text-[10px] font-semibold text-slate-400 tracking-wider uppercase">
-                IAI Cameroon • SE Level 2
-              </p>
             </div>
           </Link>
 
@@ -103,15 +106,6 @@ export default function Navbar() {
             >
               Marketplace
             </Link>
-            <Link
-              to="/about"
-              className={`text-sm font-semibold transition-colors ${
-                isActive('/about') ? 'text-emerald-700 font-bold' : 'text-slate-600 hover:text-emerald-600'
-              }`}
-            >
-              About Project
-            </Link>
-
             {/* Quick Access to Actor Dashboard if Authenticated */}
             {isAuthenticated && (
               <Link
@@ -119,7 +113,7 @@ export default function Navbar() {
                 className="inline-flex items-center space-x-2 text-sm font-bold text-emerald-700 bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-200/60 hover:bg-emerald-100/70 transition-all"
               >
                 {getRoleIcon()}
-                <span>{role.replace('_', ' ')} Portal</span>
+                <span>{getRoleLabel()} Portal</span>
               </Link>
             )}
           </div>
@@ -191,7 +185,7 @@ export default function Navbar() {
                         <p className="text-xs font-bold text-slate-900">{user?.name}</p>
                         <p className="text-[11px] text-slate-500 truncate">{user?.email}</p>
                         <div className="mt-1.5 inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
-                          Role: {role.replace('_', ' ')}
+                          Role: {getRoleLabel()}
                         </div>
                       </div>
 
@@ -213,7 +207,7 @@ export default function Navbar() {
                         <span>Profile & Settings</span>
                       </Link>
 
-                      {(role === 'USER' || role === 'SELLER_BUYER') && (
+                      {(role === 'USER' || role === 'CUSTOMER' || role === 'SELLER_BUYER') && (
                         <Link
                           to="/buyer/orders"
                           onClick={() => setUserMenuOpen(false)}
@@ -293,20 +287,13 @@ export default function Navbar() {
           >
             Marketplace
           </Link>
-          <Link
-            to="/about"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emerald-700"
-          >
-            About Project
-          </Link>
           {isAuthenticated && (
             <Link
               to={getDashboardPath()}
               onClick={() => setMobileMenuOpen(false)}
               className="block px-3 py-2 rounded-lg text-sm font-bold text-emerald-700 bg-emerald-50"
             >
-              {role.replace('_', ' ')} Dashboard
+              {getRoleLabel()} Dashboard
             </Link>
           )}
         </div>

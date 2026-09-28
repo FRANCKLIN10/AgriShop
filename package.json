@@ -1,7 +1,7 @@
 {
   "name": "agrishop-platform",
   "version": "1.0.0",
-  "description": "Agricultural Product Marketing Platform - Level 2 Software Engineering Project at IAI Cameroon",
+  "description": "AGRISHOP agricultural marketplace platform for fresh produce sourcing, logistics, and trade",
   "private": true,
   "scripts": {
     "install:all": "npm --prefix server install && npm --prefix client install",
@@ -23,9 +23,10 @@
     "marketplace",
     "farmer",
     "ecommerce",
-    "iai-cameroon",
-    "software-engineering"
+    "agri-marketplace",
+    "fresh-produce",
+    "african-commerce"
   ],
-  "author": "IAI Cameroon Software Engineering Student",
+  "author": "AGRISHOP Team",
   "license": "ISC"
 }

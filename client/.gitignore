@@ -1,3 +1,21 @@
+# dependencies
 node_modules/
-dist/
+
+# build output
+/dist/
+.vite/
+
+# environment files
 .env
+.env.*
+!.env.example
+
+# logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# editors
+.vscode/
+.DS_Store

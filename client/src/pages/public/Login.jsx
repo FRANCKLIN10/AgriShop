@@ -41,6 +41,7 @@ export default function Login() {
       case 'DELIVERY_SERVICE':
         navigate('/delivery/dashboard');
         break;
+      case 'CUSTOMER':
       case 'SELLER_BUYER':
       case 'USER':
       default:
@@ -87,14 +88,14 @@ export default function Login() {
           </p>
         </div>
 
-        {/* Academic Demo Fast Login Panel */}
+        {/* Demo Access Panel */}
         <div className="bg-emerald-50/70 border border-emerald-200/80 rounded-2xl p-4 shadow-sm space-y-2.5">
           <div className="flex items-center space-x-1.5 text-xs font-bold text-emerald-900">
             <ShieldCheck className="w-4 h-4 text-emerald-600" />
-            <span>Academic Defence Quick Credentials (1-Click Fill)</span>
+            <span>Quick Access Profiles</span>
           </div>
           <p className="text-[11px] text-emerald-700 leading-snug">
-            Select an actor profile to automatically populate credentials for testing:
+            Select a role profile to automatically populate credentials for testing:
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-1.5 pt-1">
             <button
@@ -127,7 +128,7 @@ export default function Login() {
               className="px-2 py-1.5 bg-white hover:bg-emerald-100 text-slate-700 rounded-lg text-[11px] font-bold border border-emerald-200 text-left truncate flex items-center space-x-1"
             >
               <ShoppingBag className="w-3 h-3 text-blue-600 flex-shrink-0" />
-              <span className="truncate">Buyer (Douala)</span>
+              <span className="truncate">Customer (Douala)</span>
             </button>
             <button
               type="button"

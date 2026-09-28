@@ -60,15 +60,15 @@ export default function Home() {
         <div className="relative max-w-6xl mx-auto px-6 lg:px-8 text-center space-y-8">
           <div className="inline-flex items-center space-x-2 bg-emerald-700/60 border border-emerald-500/40 px-4 py-1.5 rounded-full text-xs font-bold text-emerald-200 tracking-wide uppercase shadow-sm">
             <Sprout className="w-4 h-4 text-emerald-300" />
-            <span>IAI Cameroon Software Engineering Level 2 Project</span>
+            <span>Fresh agricultural sourcing</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight max-w-4xl mx-auto">
-            Design & Implementation of an <span className="text-emerald-300 underline decoration-emerald-500 decoration-wavy decoration-2">Agricultural Product</span> Marketing Platform
+            Your trusted <span className="text-emerald-300 underline decoration-emerald-500 decoration-wavy decoration-2">agricultural marketplace</span>
           </h1>
 
           <p className="text-base sm:text-lg text-emerald-100 max-w-2xl mx-auto font-normal leading-relaxed">
-            Connecting Cameroonian farmers and agricultural cooperatives directly with wholesale & retail buyers. Backed by real-time inventory, integrated logistics dispatch, and strict UML use-case architecture.
+            Connect directly with African farmers and suppliers for fresh produce, reliable delivery, and transparent sourcing across the continent.
           </p>
 
           {/* Action CTAs */}
@@ -96,16 +96,16 @@ export default function Home() {
               <p className="text-xs font-medium text-emerald-200 mt-1">Direct Farm Produce</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl sm:text-3xl font-extrabold text-white">5 Actors</p>
-              <p className="text-xs font-medium text-emerald-200 mt-1">Full UML Roles</p>
+              <p className="text-2xl sm:text-3xl font-extrabold text-white">5 Roles</p>
+              <p className="text-xs font-medium text-emerald-200 mt-1">Marketplace actors</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl sm:text-3xl font-extrabold text-white">15 Cases</p>
-              <p className="text-xs font-medium text-emerald-200 mt-1">UML Core Functions</p>
+              <p className="text-2xl sm:text-3xl font-extrabold text-white">15+ Flows</p>
+              <p className="text-xs font-medium text-emerald-200 mt-1">Trade operations</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl sm:text-3xl font-extrabold text-white">Cameroon</p>
-              <p className="text-xs font-medium text-emerald-200 mt-1">Nationwide Logistics</p>
+              <p className="text-2xl sm:text-3xl font-extrabold text-white">Africa</p>
+              <p className="text-xs font-medium text-emerald-200 mt-1">Cross-border trade</p>
             </div>
           </div>
         </div>
@@ -284,18 +284,18 @@ export default function Home() {
         )}
       </section>
 
-      {/* 4. ACADEMIC SYSTEM ARCHITECTURE & 5 ACTORS SECTION */}
+      {/* 4. PLATFORM ROLES SECTION */}
       <section className="bg-slate-900 text-white py-16 rounded-3xl mx-4 sm:mx-6 lg:mx-8 px-6 lg:px-12">
         <div className="max-w-5xl mx-auto text-center space-y-4 mb-14">
           <div className="inline-flex items-center space-x-2 bg-emerald-950 border border-emerald-800 text-emerald-400 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
             <Award className="w-4 h-4" />
-            <span>Academic Alignment • UML Specification</span>
+            <span>Platform roles</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold">
-            Platform Actors & System Responsibilities
+            Our marketplace roles
           </h2>
           <p className="text-sm text-slate-400 max-w-2xl mx-auto">
-            Strictly engineered according to the 5 actors and 15 core use cases validated for the Level 2 Software Engineering curriculum at IAI Cameroon.
+            A simple, efficient system for sourcing produce, managing orders, and tracking delivery for every stakeholder.
           </p>
         </div>
 
@@ -304,9 +304,9 @@ export default function Home() {
             <div className="w-10 h-10 bg-blue-500/20 text-blue-400 rounded-xl flex items-center justify-center mx-auto">
               <ShoppingBag className="w-5 h-5" />
             </div>
-            <h4 className="font-bold text-sm text-white">USER</h4>
+            <h4 className="font-bold text-sm text-white">CUSTOMER</h4>
             <p className="text-xs text-slate-400 leading-relaxed">
-              Authenticated user with profile management, notification feed, and browsing access.
+              Signed-in customers browse harvests, place orders, track shipments, and manage repeat purchases.
             </p>
           </div>
 
@@ -314,7 +314,7 @@ export default function Home() {
             <div className="w-10 h-10 bg-emerald-500/20 text-emerald-400 rounded-xl flex items-center justify-center mx-auto">
               <TrendingUp className="w-5 h-5" />
             </div>
-            <h4 className="font-bold text-sm text-white">SELLER / BUYER</h4>
+            <h4 className="font-bold text-sm text-white">CUSTOMERS</h4>
             <p className="text-xs text-slate-400 leading-relaxed">
               Places orders, selects payment methods, tracks purchases, and reviews completed orders.
             </p>
@@ -324,9 +324,9 @@ export default function Home() {
             <div className="w-10 h-10 bg-amber-500/20 text-amber-400 rounded-xl flex items-center justify-center mx-auto">
               <Wheat className="w-5 h-5" />
             </div>
-            <h4 className="font-bold text-sm text-white">FARMER</h4>
+            <h4 className="font-bold text-sm text-white">FARMERS</h4>
             <p className="text-xs text-slate-400 leading-relaxed">
-              Publishes produce, manages stock, receives low-stock warnings, accepts incoming orders.
+              Publish produce, manage stock, receive low-stock alerts, and accept incoming orders.
             </p>
           </div>
 
@@ -334,7 +334,7 @@ export default function Home() {
             <div className="w-10 h-10 bg-indigo-500/20 text-indigo-400 rounded-xl flex items-center justify-center mx-auto">
               <Truck className="w-5 h-5" />
             </div>
-            <h4 className="font-bold text-sm text-white">DELIVERY</h4>
+            <h4 className="font-bold text-sm text-white">LOGISTICS</h4>
             <p className="text-xs text-slate-400 leading-relaxed">
               Accepts delivery requests, manages transit status, records receipt, and logs delivery history.
             </p>
@@ -378,9 +378,9 @@ export default function Home() {
             <div className="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center mb-6">
               <ShoppingBag className="w-6 h-6" />
             </div>
-            <h3 className="text-lg font-bold text-slate-900 mb-2">Buyers Order & Pay</h3>
+            <h3 className="text-lg font-bold text-slate-900 mb-2">Customers Order & Pay</h3>
             <p className="text-sm text-slate-600 leading-relaxed">
-              Buyers search products, add items to cart, select delivery destinations, and complete payments via MTN MoMo, Orange Money, or Card.
+              Customers search products, add items to cart, select delivery destinations, and complete payments via MTN MoMo, Orange Money, or Card.
             </p>
           </div>
 
@@ -391,7 +391,7 @@ export default function Home() {
             </div>
             <h3 className="text-lg font-bold text-slate-900 mb-2">Logistics Dispatch & Delivery</h3>
             <p className="text-sm text-slate-600 leading-relaxed">
-              Delivery services accept the dispatch request, pick up goods from the farm gate, and deliver to the buyer with tracking code verification.
+              Logistics teams accept the dispatch request, pick up goods from the farm gate, and deliver to the customer with tracking code verification.
             </p>
           </div>
         </div>

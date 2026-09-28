@@ -1,7 +1,7 @@
 -- ==========================================================
 -- AGRISHOP Relational Database Schema
--- Level 2 Software Engineering Project - IAI Cameroon
--- Normalized Relational Architecture with Foreign Keys and Constraints
+-- AGRISHOP Platform Database Schema
+-- Normalized relational architecture with foreign keys and constraints
 -- ==========================================================
 
 PRAGMA foreign_keys = ON;
@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS users (
     name TEXT NOT NULL,
     email TEXT NOT NULL UNIQUE COLLATE NOCASE,
     password_hash TEXT NOT NULL,
-    role TEXT NOT NULL CHECK(role IN ('USER', 'SELLER_BUYER', 'FARMER', 'DELIVERY_SERVICE', 'ADMINISTRATOR')),
+    role TEXT NOT NULL CHECK(role IN ('USER', 'CUSTOMER', 'SELLER_BUYER', 'FARMER', 'DELIVERY_SERVICE', 'ADMINISTRATOR')),
     phone TEXT,
     address TEXT,
     city TEXT,

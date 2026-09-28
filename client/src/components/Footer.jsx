@@ -18,11 +18,11 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm text-slate-400 leading-relaxed max-w-sm">
-              An enterprise-grade agricultural product marketing platform connecting local farmers directly with commercial buyers, supported by integrated logistics and administrative oversight.
+              Fresh produce, direct sourcing, and reliable logistics connecting farmers with trusted buyers across the region.
             </p>
             <div className="pt-2 flex items-center space-x-2 text-xs font-semibold text-emerald-400 bg-emerald-950/60 border border-emerald-800/50 px-3 py-2 rounded-xl w-fit">
               <Award className="w-4 h-4 text-emerald-400" />
-              <span>IAI Cameroon • Software Engineering Level 2 Final Project</span>
+              <span>Trusted agricultural marketplace</span>
             </div>
           </div>
 
@@ -32,7 +32,6 @@ export default function Footer() {
             <ul className="space-y-2.5 text-sm">
               <li><Link to="/" className="hover:text-emerald-400 transition-colors">Home</Link></li>
               <li><Link to="/products" className="hover:text-emerald-400 transition-colors">Product Catalogue</Link></li>
-              <li><Link to="/about" className="hover:text-emerald-400 transition-colors">UML & Architecture</Link></li>
               <li><Link to="/cart" className="hover:text-emerald-400 transition-colors">Shopping Cart</Link></li>
             </ul>
           </div>
@@ -42,8 +41,8 @@ export default function Footer() {
             <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-4">Portals</h4>
             <ul className="space-y-2.5 text-sm">
               <li><Link to="/login" className="hover:text-emerald-400 transition-colors">Farmer Hub</Link></li>
-              <li><Link to="/login" className="hover:text-emerald-400 transition-colors">Buyer Portal</Link></li>
-              <li><Link to="/login" className="hover:text-emerald-400 transition-colors">Delivery Hub</Link></li>
+              <li><Link to="/login" className="hover:text-emerald-400 transition-colors">Customer Portal</Link></li>
+              <li><Link to="/login" className="hover:text-emerald-400 transition-colors">Logistics Hub</Link></li>
               <li><Link to="/login" className="hover:text-emerald-400 transition-colors">Admin Console</Link></li>
             </ul>
           </div>
@@ -62,7 +61,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
-          <p>© 2026 AGRISHOP Cameroon. Designed & implemented for IAI Cameroon Academic Defence.</p>
+          <p>© 2026 AGRISHOP Cameroon. Fresh produce, smarter sourcing.</p>
           <div className="mt-4 sm:mt-0 flex items-center space-x-4">
             <span className="flex items-center space-x-1 text-slate-400">
               <Shield className="w-3.5 h-3.5 text-emerald-400" />

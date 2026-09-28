@@ -38,8 +38,33 @@ export default function OrderDetails() {
     </div>
   );
 
+  const routePoints = {
+    origin: { x: 18, y: 62 },
+    destination: { x: 78, y: 36 },
+    hub: { x: 52, y: 48 }
+  };
+
+  const trackingSteps = [
+    'Order confirmed',
+    'Picked up from farm',
+    'In transit',
+    'Arrival hub',
+    'Delivered'
+  ];
+
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
+    <>
+      <style>{`
+        @keyframes vehicleTravel {
+          0% { transform: translate(0, 0); }
+          25% { transform: translate(18px, -10px); }
+          50% { transform: translate(56px, -22px); }
+          75% { transform: translate(92px, -12px); }
+          100% { transform: translate(136px, 8px); }
+        }
+      `}</style>
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
       {/* Success Banner */}
       {justPlaced && (
         <div className="bg-emerald-50 border border-emerald-200 p-4 rounded-2xl flex items-center space-x-3">
@@ -94,6 +119,60 @@ export default function OrderDetails() {
           <div className="border-t border-slate-100 pt-4 flex justify-between items-center">
             <span className="font-bold text-slate-800">Total Amount</span>
             <span className="text-xl font-black text-emerald-800">{Number(order.total_amount).toLocaleString()} FCFA</span>
+          </div>
+        </div>
+
+        <div className="md:col-span-2 bg-white rounded-2xl border border-slate-100 shadow-sm p-6 space-y-4">
+          <h3 className="font-bold text-slate-900 flex items-center space-x-2 border-b border-slate-100 pb-3">
+            <Truck className="w-4 h-4 text-emerald-600" />
+            <span>Delivery Tracking Map</span>
+          </h3>
+          <div className="relative h-64 overflow-hidden rounded-2xl border border-emerald-100 bg-gradient-to-br from-emerald-50 via-slate-50 to-amber-50">
+            <div className="absolute inset-0 opacity-30" style={{backgroundImage:'linear-gradient(rgba(15,118,110,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(15,118,110,0.08) 1px, transparent 1px)', backgroundSize:'32px 32px'}} />
+            <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+              <path d={`M ${routePoints.origin.x} ${routePoints.origin.y} Q ${routePoints.hub.x} ${routePoints.hub.y}, ${routePoints.destination.x} ${routePoints.destination.y}`} fill="none" stroke="#0f766e" strokeWidth="1.8" strokeDasharray="5 3" />
+            </svg>
+            <div className="absolute left-[18%] top-[62%] -translate-x-1/2 -translate-y-1/2">
+              <div className="w-3 h-3 rounded-full bg-emerald-600 border-2 border-white shadow-md" />
+              <div className="mt-2 text-[10px] font-bold text-emerald-800 bg-white/80 px-2 py-1 rounded-full">Farm origin</div>
+            </div>
+            <div className="absolute left-[52%] top-[48%] -translate-x-1/2 -translate-y-1/2">
+              <div className="w-3 h-3 rounded-full bg-amber-500 border-2 border-white shadow-md" />
+              <div className="mt-2 text-[10px] font-bold text-amber-700 bg-white/80 px-2 py-1 rounded-full">Hub</div>
+            </div>
+            <div className="absolute left-[78%] top-[36%] -translate-x-1/2 -translate-y-1/2">
+              <div className="w-3 h-3 rounded-full bg-sky-600 border-2 border-white shadow-md" />
+              <div className="mt-2 text-[10px] font-bold text-sky-700 bg-white/80 px-2 py-1 rounded-full">Destination</div>
+            </div>
+            <div className="absolute left-[18%] top-[62%] w-5 h-5 rounded-full bg-emerald-700 border-2 border-white shadow-lg" style={{ animation: 'vehicleTravel 4s ease-in-out infinite' }} />
+            <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between bg-white/90 backdrop-blur-sm rounded-xl p-3 shadow-sm border border-slate-100 text-xs">
+              <div>
+                <p className="text-slate-500">Origin</p>
+                <p className="font-bold text-slate-800">{(order.items || [])[0]?.farm_name || 'Farm pickup'}</p>
+              </div>
+              <div className="text-center">
+                <p className="text-slate-500">Status</p>
+                <p className="font-bold text-emerald-700">{order.delivery_status || order.status}</p>
+              </div>
+              <div className="text-right">
+                <p className="text-slate-500">Destination</p>
+                <p className="font-bold text-slate-800">{order.delivery_city}</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="pt-2">
+            <p className="text-[11px] font-bold text-slate-700 mb-2">Tracking timeline</p>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
+              {trackingSteps.map((step, index) => (
+                <div key={step} className={`rounded-xl border px-2 py-2 text-center ${index <= 2 ? 'bg-emerald-50 border-emerald-200 text-emerald-700' : 'bg-slate-50 border-slate-200 text-slate-500'}`}>
+                  <div className={`w-5 h-5 mx-auto mb-1 rounded-full text-[10px] font-black flex items-center justify-center ${index <= 2 ? 'bg-emerald-600 text-white' : 'bg-white text-slate-500 border border-slate-200'}`}>
+                    {index + 1}
+                  </div>
+                  <p className="text-[10px] font-semibold leading-snug">{step}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -161,5 +240,6 @@ export default function OrderDetails() {
         </div>
       </div>
     </div>
+  </>
   );
 }

@@ -7,7 +7,7 @@ const adminController = {
     try {
       const totalUsers = db.prepare('SELECT COUNT(*) AS count FROM users').get().count;
       const totalFarmers = db.prepare("SELECT COUNT(*) AS count FROM users WHERE role = 'FARMER'").get().count;
-      const totalBuyers = db.prepare("SELECT COUNT(*) AS count FROM users WHERE role IN ('USER', 'SELLER_BUYER')").get().count;
+      const totalBuyers = db.prepare("SELECT COUNT(*) AS count FROM users WHERE role IN ('USER', 'CUSTOMER', 'SELLER_BUYER')").get().count;
       const totalDeliveryAgents = db.prepare("SELECT COUNT(*) AS count FROM users WHERE role = 'DELIVERY_SERVICE'").get().count;
 
       const totalProducts = db.prepare('SELECT COUNT(*) AS count FROM products').get().count;
@@ -154,7 +154,7 @@ const adminController = {
       const userId = parseInt(req.params.id, 10);
       const { role } = req.body;
 
-      const allowedRoles = ['USER', 'SELLER_BUYER', 'FARMER', 'DELIVERY_SERVICE', 'ADMINISTRATOR'];
+      const allowedRoles = ['USER', 'CUSTOMER', 'SELLER_BUYER', 'FARMER', 'DELIVERY_SERVICE', 'ADMINISTRATOR'];
       if (!role || !allowedRoles.includes(role)) {
         return res.status(400).json({
           success: false,
